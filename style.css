@@ -477,7 +477,7 @@ html {
     font-weight: 800;
     color: transparent;
     -webkit-text-stroke: 2px white;
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", sans-serif !important;
 
     background-color: transparent;
     z-index: 10;
@@ -624,7 +624,7 @@ html {
 }
 
 .gal-we-understand-heading span {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important;
     font-weight: 700;
     font-size: 36px;
     line-height: 46px;
@@ -995,6 +995,14 @@ html {
 
 /* Responsive */
 @media (max-width: 1024px) {
+    img.tab-hero-sec-shape {
+        display: flex;
+        margin-bottom: -13px !important;
+        z-index: 10;
+        position: absolute;
+        bottom: 0;
+    }
+
     hr {
         display: none;
     }
@@ -1137,6 +1145,7 @@ html {
         flex-direction: column !important;
         padding: 24px;
         gap: 40px;
+        padding-bottom: 90px;
     }
 
     .organize-greenborder-box {
@@ -1191,7 +1200,13 @@ html {
     }
 
     .gallery-content-grid {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: 1fr;
+    }
+
+    .grid-1,
+    .grid-2,
+    .grid-3 {
+        grid-row: auto;
     }
 
     .success-rate-btn {
@@ -1215,7 +1230,7 @@ html {
     -webkit-text-stroke-color: white;
     color: transparent;
     background: transparent;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .watch-video-left-div {
