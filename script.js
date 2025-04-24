@@ -62,21 +62,23 @@ track.addEventListener("touchend", (e) => {
 
 // Init
 updateCarousel();
-
-const videoButton = document.getElementById("play-video");
+// play - video - 2;
+const videoButtons = document.querySelectorAll(".play-video");
 const modal = document.getElementById("video-modal");
-const closeBtn = document.querySelector(".close-button");
 const videoFrame = document.getElementById("video-frame");
+const closeBtn = document.querySelector(".close-button");
 
-videoButton.addEventListener("click", () => {
-  modal.style.display = "flex";
-  videoFrame.src =
-    "https://www.youtube.com/embed/aFWDOFg7X2A?si=OnkHVfBkYsVnEsm_"; // Replace VIDEO_ID
+videoButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const videoUrl = button.getAttribute("data-video");
+    modal.style.display = "flex";
+    videoFrame.src = videoUrl;
+  });
 });
 
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
-  videoFrame.src = ""; // Stop the video
+  videoFrame.src = "";
 });
 
 window.addEventListener("click", (e) => {
@@ -85,6 +87,7 @@ window.addEventListener("click", (e) => {
     videoFrame.src = "";
   }
 });
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e) {
@@ -125,7 +128,7 @@ document
 
       // Special email validation
       if (
-        id === "email" &&   
+        id === "email" &&
         field.value.trim() !== "" &&
         !validateEmail(field.value)
       ) {
@@ -138,7 +141,7 @@ document
     if (isValid) {
       setTimeout(() => {
         window.location.href = "thankyoupage.html";
-      },1000);
+      }, 1000);
     }
   });
 
@@ -182,3 +185,10 @@ document
       field.classList.remove("input-error");
     });
   });
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+
+hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+});

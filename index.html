@@ -21,32 +21,34 @@
       <div class="hero-header-main-div">
         <!-- header section  -->
         <div class="header-div">
-          <div>
-            <img width="226px" height="35px" src="./assets/logo.svg" alt="" />
+          <div class="logo-wrapper">
+            <img class="logo-img" src="./assets/logo.svg" alt="Logo" />
           </div>
-          <div class="right-header-menu">
+        
+          <!-- Hamburger Icon -->
+          <div class="hamburger" id="hamburger">
+            &#9776; <!-- Hamburger symbol -->
+          </div>
+        
+          <!-- Navigation Menu -->
+          <div class="right-header-menu" id="mobile-menu">
             <ul class="menu-links-ul">
-              <li>
-                <a href="" class="menu-active">HOME</a>
-              </li>
-              <li>
-                <a href="">ABOUT</a>
-              </li>
-              <li>
-                <a href="">CONTACT</a>
-              </li>
+              <li><a href="" class="menu-active">HOME</a></li>
+              <li><a href="">ABOUT</a></li>
+              <li><a href="">CONTACT</a></li>
             </ul>
-            <hr style="height: 20px; margin: 0px 30px;",   />
+            <hr style="height: 20px; margin: 0px 30px" />
             <ul class="menu-links-ul">
               <li>
-                <a href="" class="cta-menu-header"
-                  >CALL NOW FOR A CONSULT
-                  <span style="color: #5bc8af">123.456.7890</span>
+                <a href="" class="cta-menu-header">
+                  CALL NOW FOR A CONSULT <span style="color: #5bc8af">123.456.7890</span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
+        
+        
 
         <!-- hero section  -->
         <div class="main-hero-section">
@@ -68,12 +70,12 @@
               <h3>Contact Us</h3>
               <div style="display: flex;">
                 <div class="floating-input">
-                  <input type="text" id="firstName" placeholder=" "/>
+                  <input type="text" id="firstName" placeholder=" " autocomplete="off"/>
                   <label for="firstName">First Name</label>
                   <div class="error-msg">This field can’t be empty. Please fill it in.</div>
                 </div>
                 <div class="floating-input">
-                  <input type="text" id="lastName" placeholder=" " />
+                  <input type="text" id="lastName" placeholder=" " autocomplete="off" />
                   <label for="lastName">Last Name</label>
                   <div class="error-msg">This field can’t be empty. Please fill it in.</div>
                 </div>
@@ -81,12 +83,12 @@
             
               <div style="display: flex;">
                 <div class="floating-input">
-                  <input type="email" id="email" placeholder=" " />
+                  <input type="email" id="email" placeholder=" " autocomplete="off" />
                   <label for="email">Business Email</label>
                   <div class="error-msg">Please enter a valid email address.</div>
                 </div>
                 <div class="floating-input">
-                  <input type="text" id="company" placeholder=" " />
+                  <input type="text" id="company" placeholder=" " autocomplete="off" />
                   <label for="company">Company</label>
                   <div class="error-msg">This field can’t be empty. Please fill it in.</div>
                 </div>
@@ -121,7 +123,7 @@
         <img src="./assets/gal2.png" alt="" />
         <img src="./assets/gal3.png" alt="" />
       </div>
-      <div class="gal-we-understand-heading">
+      <div class="gal-we-understand-heading  ">
         <h3><span>WE</span> UNDERSTAND</h3>
       </div>
       <div class="gallery-content-grid">
@@ -233,8 +235,8 @@
     </section>
 
     <!-- WE CAN ORGANIZE EVERYTHING -->
-    <section class="main-section">
-      <div class="gal-we-understand-heading">
+    <section class="main-section" style="padding-top: 20px !important;">
+      <div class="gal-we-understand-heading understand-heading">
         <h3><span>WE</span> CAN ORGANIZE EVERYTHING</h3>
       </div>
       <div class="gallery-content-grid">
@@ -389,7 +391,7 @@
       </div>
 
       <div class="video-bg-img-div"></div>
-      <div class="video-bg-play-outer" id="play-video">
+      <div class="video-bg-play-outer play-video" data-video="https://www.youtube.com/embed/aFWDOFg7X2A?autoplay=1">
         <span class="material-symbols-outlined"> play_circle </span>
       </div>
       <!-- Modal Container -->
@@ -411,6 +413,7 @@
 
     <!-- WATCH THE VIDEO SMALL DEVICES  -->
 
+    
     <section class="main-section-video-small-devices">
    <div class="video-section-top watch-video-left-div">
     <h1 class="footer-heading"><span>WATCH</span> THE VIDEO</h1>
@@ -449,23 +452,10 @@
     </div>
    </div>
    <div class="video-bg-img-div-small" style="height: 500px;position: relative;"></div>
-   <div class="video-bg-play-outer-small" id="play-video">
-     <span class="material-symbols-outlined"> play_circle </span>
-   </div>
-   <div id="video-modal" class="video-modal">
-    <div class="video-modal-content">
-      <span class="close-button">&times;</span>
-      <iframe
-        id="video-frame"
-        width="800"
-        height="450"
-        src=""
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
-    </div>
+   <div class="video-bg-play-outer-small play-video" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
+    <span class="material-symbols-outlined"> play_circle </span>
   </div>
+
     </section>
 
     <!-- footer section  -->
@@ -484,6 +474,21 @@
       </div>
     </section>
 
+
+    <div id="video-modal" class="video-modal" style="display: none;">
+      <div class="video-modal-content">
+        <span class="close-button">&times;</span>
+        <iframe
+          id="video-frame"
+          width="800"
+          height="450"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
